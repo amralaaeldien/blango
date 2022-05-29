@@ -13,16 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-ALLOWED_HOSTS = [
-    '*',
-]
-X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
-CSRF_COOKIE_SAMESITE = None
-CSRF_TRUSTED_ORIGINS = [os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io']
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SAMESITE = 'None'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -67,7 +57,7 @@ ROOT_URLCONF = 'blango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
