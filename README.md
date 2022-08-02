@@ -1,3 +1,4 @@
-#Blango
+# Blango
+
 A simple blog
 ```
